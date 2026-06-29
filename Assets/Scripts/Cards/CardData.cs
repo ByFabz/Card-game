@@ -13,6 +13,7 @@ public enum CardType //this will be to choose the card type which you will write
 public class CardData : ScriptableObject
 {
     [Header("Base Info")]
+    public int cardId;
     public string cardName;
     public string description;
     public Sprite artwork;
