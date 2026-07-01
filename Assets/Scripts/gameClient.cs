@@ -12,9 +12,9 @@ public class gameClient
     // WebSocket Conn
     public async Task ConnectAsync(string uri) { await _socket.ConnectAsync(new Uri(uri), CancellationToken.None); }
 
-    // Send Data
-    public async Task SendAsync(string message) {
-        byte[] bytes = Encoding.UTF8.GetBytes(message);
+    // Send Data (Card Name)
+    public async Task SendAsync(string cardName) {
+        byte[] bytes = Encoding.UTF8.GetBytes(cardName);
 
         await _socket.SendAsync(
             bytes,
