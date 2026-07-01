@@ -10,7 +10,7 @@ public class gameClient
     private readonly ClientWebSocket _socket = new();
 
     // WebSocket Conn
-    public async Task ConnectAsync(string uri) { await _socket.ConnectAsync(uri, CancellationToken.None); }
+    public async Task ConnectAsync(string uri) { await _socket.ConnectAsync(new Uri(uri), CancellationToken.None); }
 
     // Send Data
     public async Task SendAsync(string message) {
@@ -20,7 +20,7 @@ public class gameClient
             bytes,
             WebSocketMessageType.Text,
             true,
-            cancellationToken.None
+            CancellationToken.None
         );
     }
 
@@ -28,7 +28,7 @@ public class gameClient
     public async Task RecieveLoop() {
         byte[] buffer = new byte[4096];
 
-        while (_socket.State == WebSocket.Open) {
+        while (_socket.State == WebSocketState.Open) {
             var result     = await _socket.ReceiveAsync(buffer, CancellationToken.None);
             string message = Encoding.UTF8.GetString(buffer, 0, result.Count);
 
