@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8072d00ee8f654b829dc10d9b1cff7, type: 3}
+  m_Script: {fileID: 11500000, guid: 31f8a8f547b7d8c4ca24dea1eaeb36ec, type: 3}
   m_Name: Fatih Sultan Mehmet
-  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  m_EditorClassIdentifier: Assembly-CSharp::LeaderCardData
   cardName: Fatih Sultan Mehmet
-  description: "\u0130stanbul'u fethederek bir \xE7a\u011F\u0131 kapat\u0131p yeni
-    bir \xE7a\u011F a\xE7an b\xFCy\xFCk Osmanl\u0131 h\xFCk\xFCmdar\u0131. Kararl\u0131
-    liderli\u011Fi ordusuna cesaret ve g\xFC\xE7 kazand\u0131r\u0131r."
-  artwork: {fileID: -5225540622116197949, guid: e02c94997f94a1b4f8eece380fc6bd99, type: 3}
-  cardType: 0
+  description: "\u0130stanbulu filan alm\u0131\u015F ''YERSEN''"
+  passiveDescription: 
+  artwork: {fileID: -8790457914579857135, guid: 865651323009da8498754ce85deec22c, type: 3}
+  Popularity: 10
+  Prestige: 10
+  Authority: 10
