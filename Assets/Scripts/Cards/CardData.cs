@@ -11,7 +11,6 @@ public enum CardType //this will be to choose the card type which you will write
     Merchant,
     Blacksmith,
     Farmer
-
 }
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Game/Card/Base Card")]
