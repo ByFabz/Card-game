@@ -1,0 +1,19 @@
+public enum Kingdoms
+{
+    Ottoman,
+    Roman,
+    Macedonian,
+    Mongol,
+    French,
+    Frankish,
+    AngloSaxon,
+    Ayyubid,
+    Byzantine,
+    Persian,
+    Japanese,
+    Chinese,
+    Viking,
+    Egyptian,
+    Carthaginian,
+    None
+}

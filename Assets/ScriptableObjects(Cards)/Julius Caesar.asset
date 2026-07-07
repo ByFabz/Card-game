@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f8a8f547b7d8c4ca24dea1eaeb36ec, type: 3}
+  m_Name: Julius Caesar
+  m_EditorClassIdentifier: Assembly-CSharp::LeaderCardData
+  cardName: Julius Caesar
+  description: One of Rome's greatest military leaders whose victories transformed
+    the Roman Republic.
+  passiveDescription: 'Legion Commander
+
+    All Roman Legion cards gain Bonus Stats.'
+  artwork: {fileID: 0}
+  rarity: 4
+  kingdom: 1
+  Popularity: 83
+  Prestige: 91
+  Authority: 95

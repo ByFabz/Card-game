@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Fatih Sultan Mehmet
   m_EditorClassIdentifier: Assembly-CSharp::LeaderCardData
   cardName: Fatih Sultan Mehmet
-  description: "\u0130stanbulu filan alm\u0131\u015F ''YERSEN''"
-  passiveDescription: 
+  description: The Ottoman Sultan who conquered Constantinople in 1453, ending the
+    Byzantine Empire and ushering in a new era.
+  passiveDescription: 'Conqueror of Constantinople
+
+    Ottoman Army cards gain +20
+    Attack during Siege battles.'
   artwork: {fileID: -8790457914579857135, guid: 865651323009da8498754ce85deec22c, type: 3}
-  Popularity: 10
-  Prestige: 10
-  Authority: 10
+  rarity: 4
+  kingdom: 0
+  Popularity: 85
+  Prestige: 95
+  Authority: 92
