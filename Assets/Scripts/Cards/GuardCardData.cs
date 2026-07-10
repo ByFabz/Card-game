@@ -1,9 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Security", menuName = "Game/Card/Security")]
+[CreateAssetMenu(fileName = "New Guard", menuName = "Game/Card/Guard")]
 public class SecurityCardData : CardData
 {
-    [Header("Security Stats")]
+    [Header("Guard Stats")]
     public int ProtectionPower;
     public int Awareness;
 

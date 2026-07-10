@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb178565e8da21b4dbe3c6033977a7e9, type: 3}
+  m_Name: Otto von Bismarck
+  m_EditorClassIdentifier: Assembly-CSharp::DiplomatCardData
+  cardName: Otto von Bismarck
+  description: The Prussian statesman who unified Germany through masterful diplomacy
+    backed by strategic military strength.
+  passiveDescription: 'Blood and Iron
+
+    Gain +10 Intelligence, +10 Negotiation,
+    and +10 Resistance.'
+  artwork: {fileID: 0}
+  rarity: 4
+  kingdom: 22
+  "\u0130ntelligence": 98
+  Persuasion: 94
+  Negotiation: 97
+  Resistance: 95

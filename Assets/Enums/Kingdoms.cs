@@ -15,5 +15,18 @@ public enum Kingdoms
     Viking,
     Egyptian,
     Carthaginian,
-    None
+    German,
+    Venetian,
+    None,
+    Scottish,
+    American,
+    Italian,
+    Austrian,
+    Prussian,
+    Dutch,
+    British,
+    Vatican,
+    English,
+    Rashidun
+
 }

@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a91003d6a2037254ab501bf524ec46ad, type: 3}
-  m_Name: "Pamuk Tarlas\u0131"
+  m_Name: Mushroom Cultivator
   m_EditorClassIdentifier: Assembly-CSharp::FarmerCardData
-  cardName: 
-  description: 
-  passiveDescription: 
+  cardName: Mushroom Cultivator
+  description: A skilled cultivator who specializes in growing mushrooms in carefully
+    controlled environments, producing reliable harvests with exceptional efficiency.
+  passiveDescription: Underground Harvest
   artwork: {fileID: 0}
-  FoodProductionBonus: 0
-  HarvestEfficiency: 0
-  HarvestSpeedBonus: 0
-  LandManagement: 0
+  rarity: 2
+  kingdom: 17
+  FoodProductionBonus: 75
+  HarvestEfficiency: 90
+  HarvestSpeedBonus: 84
+  LandManagement: 96

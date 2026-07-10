@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd5f6d7e83e2f4f8ddd9cc077aceba, type: 3}
+  m_Name: "Seyit Onba\u015F\u0131"
+  m_EditorClassIdentifier: Assembly-CSharp::SoldierCardData
+  cardName: "Seyit Onba\u015F\u0131"
+  description: An Ottoman soldier remembered for lifting a 276-kilogram artillery
+    shell during the Gallipoli Campaign.
+  passiveDescription: 'Last Shell
+
+    Allied Commander cards gain +20 Courage.'
+  artwork: {fileID: 0}
+  rarity: 2
+  kingdom: 0

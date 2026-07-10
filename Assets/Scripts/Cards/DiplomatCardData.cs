@@ -6,7 +6,7 @@ public class DiplomatCardData : CardData
     [Header("Diplomat Stats")]
     public int İntelligence;
     public int Persuasion;
-    public int AgreementSkill;
+    public int Negotiation;
     public int Resistance;
 
     public override string GetStats()
@@ -14,7 +14,7 @@ public class DiplomatCardData : CardData
     return
         "Intelligence: " + İntelligence +
         "\nPersuasion: " + Persuasion +
-        "\nAgreement Skill: " + AgreementSkill +
+        "\nAgreement Skill: " + Negotiation +
         "\nResistance: " + Resistance;
 }
 }
