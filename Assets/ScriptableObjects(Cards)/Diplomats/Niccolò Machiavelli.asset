@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb178565e8da21b4dbe3c6033977a7e9, type: 3}
+  m_Name: "Niccol\xF2 Machiavelli"
+  m_EditorClassIdentifier: Assembly-CSharp::DiplomatCardData
+  cardName: "Niccol\xF2 Machiavelli"
+  description: An Italian diplomat and political philosopher best known for writing
+    The Prince, one of history's most influential works on politics.
+  passiveDescription: 'The Prince
+
+    Gain +15 Intelligence.'
+  artwork: {fileID: 0}
+  rarity: 0
+  kingdom: 20
+  "\u0130ntelligence": 90
+  Persuasion: 74
+  Negotiation: 82
+  Resistance: 70

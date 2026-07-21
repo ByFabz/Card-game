@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9a35b2ead7f85478ebc1ed5335d9b8, type: 3}
+  m_Name: Apprentice Blacksmith
+  m_EditorClassIdentifier: Assembly-CSharp::BlacksmithCardData
+  cardName: Apprentice Blacksmith
+  description: A young blacksmith learning the fundamentals of forging weapons and
+    armor through years of practice.
+  passiveDescription: Learning the Craft
+  artwork: {fileID: 0}
+  rarity: 0
+  kingdom: 17
+  ProductionSpeedBonus: 82
+  WeaponQuality: 68
+  ArmorQuality: 66
+  Efficiency: 72

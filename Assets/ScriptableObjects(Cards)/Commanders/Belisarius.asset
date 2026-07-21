@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa115f683937ee046b58c6bafa648745, type: 3}
+  m_Name: Belisarius
+  m_EditorClassIdentifier: Assembly-CSharp::CommanderCardData
+  cardName: Belisarius
+  description: The Byzantine Empire's greatest general, celebrated for reclaiming
+    lost Roman territories.
+  passiveDescription: Last Roman
+  artwork: {fileID: 0}
+  rarity: 3
+  kingdom: 8
+  CommandCapacity: 95
+  Courage: 90
+  Strategy: 96

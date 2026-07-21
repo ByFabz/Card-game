@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb178565e8da21b4dbe3c6033977a7e9, type: 3}
+  m_Name: Charles-Maurice de Talleyrand
+  m_EditorClassIdentifier: Assembly-CSharp::DiplomatCardData
+  cardName: Charles-Maurice de Talleyrand
+  description: A brilliant French diplomat who remained influential through multiple
+    governments thanks to his exceptional diplomatic skill.
+  passiveDescription: 'Master Negotiator
+
+    Gain +20 Negotiation and +10 Resistance.'
+  artwork: {fileID: 0}
+  rarity: 3
+  kingdom: 4
+  "\u0130ntelligence": 97
+  Persuasion: 90
+  Negotiation: 99
+  Resistance: 92

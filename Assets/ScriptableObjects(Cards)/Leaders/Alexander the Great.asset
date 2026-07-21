@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31f8a8f547b7d8c4ca24dea1eaeb36ec, type: 3}
-  m_Name: Fatih Sultan Mehmet
+  m_Name: Alexander the Great
   m_EditorClassIdentifier: Assembly-CSharp::LeaderCardData
-  cardName: Fatih Sultan Mehmet
-  description: "\u0130stanbulu filan alm\u0131\u015F ''YERSEN''"
-  passiveDescription: 
-  artwork: {fileID: -8790457914579857135, guid: 865651323009da8498754ce85deec22c, type: 3}
-  Popularity: 10
-  Prestige: 10
-  Authority: 10
+  cardName: Alexander the Great
+  description: Created one of history's largest empires through unmatched military
+    campaigns.
+  passiveDescription: 'Unstoppable Conquest
+
+    The first Army card you play each
+    turn gains +20 Attack.'
+  artwork: {fileID: 0}
+  rarity: 4
+  kingdom: 2
+  Popularity: 86
+  Prestige: 98
+  Authority: 91
