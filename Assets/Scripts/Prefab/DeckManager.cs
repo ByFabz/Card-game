@@ -7,16 +7,16 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private GameObject CardPrefab;
     [SerializeField] private Transform Container;
 
-    [SerializeField] private List<CardData> CardList;
+    [SerializeField] private List<CardDataMain> CardList;
 
     private void Start()
     {
         CreateDeck(CardList);
     }
 
-    public void CreateDeck(List<CardData> Cards)
+    public void CreateDeck(List<CardDataMain> Cards)
     {
-        foreach (CardData Card in Cards)
+        foreach (CardDataMain Card in Cards)
         {
             GameObject obj  = Instantiate(CardPrefab, Container);
             CardPrefab view = obj.GetComponent<CardPrefab>();
