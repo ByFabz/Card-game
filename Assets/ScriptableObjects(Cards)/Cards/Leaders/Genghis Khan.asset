@@ -19,9 +19,10 @@ MonoBehaviour:
 
     Always have the First Attack Chance
     in the war. '
-  artwork: {fileID: 0}
+  artwork: {fileID: 8957324059118975939, guid: 371274277aec35b42b0a3983f6b00ece, type: 3}
   rarity: 4
   kingdom: 3
+  CardId: 0
   Popularity: 76
   Prestige: 97
   Authority: 98

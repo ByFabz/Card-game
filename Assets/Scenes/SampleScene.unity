@@ -171,8 +171,8 @@ MonoBehaviour:
   CardPrefab: {fileID: 1115320966}
   Container: {fileID: 62689098}
   CardList:
-  - {fileID: 11400000, guid: da0ebb66c6b2b894ca1ee6fbb5bc2257, type: 2}
-  - {fileID: 11400000, guid: 263ed29b37c68f74582e106677348bd0, type: 2}
+  - {fileID: 11400000, guid: 88ff89a72052e2c4e880f5a6d54e51d9, type: 2}
+  - {fileID: 11400000, guid: a7420c5facae58a48b2c2d456f7d07de, type: 2}
 --- !u!114 &62689100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416969766152400469, guid: 1fd70eb1a50a75b439f9692dee63df02, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -150
+      value: -900
       objectReference: {fileID: 0}
     - target: {fileID: 3416969766152400469, guid: 1fd70eb1a50a75b439f9692dee63df02, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -319,6 +319,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 356577242}
     - target: {fileID: 5985011099878843116, guid: 1fd70eb1a50a75b439f9692dee63df02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985011099878843116, guid: 1fd70eb1a50a75b439f9692dee63df02, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 50
       objectReference: {fileID: 0}
@@ -328,11 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8760567732472950497, guid: 1fd70eb1a50a75b439f9692dee63df02, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 75.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8760567732472950497, guid: 1fd70eb1a50a75b439f9692dee63df02, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -35.9
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -18,6 +18,7 @@ public class CardData : ScriptableObject
     public CardRarity rarity;
 
     public Kingdoms kingdom;
+    public int CardId;
     public virtual string GetStats()
     {
         return "";
