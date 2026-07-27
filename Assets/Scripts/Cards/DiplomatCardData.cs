@@ -4,7 +4,7 @@ using UnityEngine;
 public class DiplomatCardData : CardData
 {
     [Header("Diplomat Stats")]
-    public int İntelligence;
+    public int Intelligence;
     public int Persuasion;
     public int Negotiation;
     public int Resistance;
@@ -12,7 +12,7 @@ public class DiplomatCardData : CardData
     public override string GetStats()
 {
     return
-        "Intelligence: " + İntelligence +
+        "Intelligence: " + Intelligence +
         "\nPersuasion: " + Persuasion +
         "\nAgreement Skill: " + Negotiation +
         "\nResistance: " + Resistance;
