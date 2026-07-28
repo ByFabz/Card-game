@@ -14,13 +14,14 @@ public class DiplomacyManager : MonoBehaviour
 
     private void Start()
     {
-        GenerateAgreementsForPlayer(player1, player1Agreements);
-        GenerateAgreementsForPlayer(player2, player2Agreements);
+        GenerateAgreementsForPlayer(player1, player2, player1Agreements);
+        GenerateAgreementsForPlayer(player2, player1, player2Agreements);
         ReadDiplomatStats();
     }
 
     private void GenerateAgreementsForPlayer(
     Player player,
+    Player enemy,
     List<AgreementData> playerAgreements)
 {
     playerAgreements.Clear();
@@ -31,7 +32,7 @@ public class DiplomacyManager : MonoBehaviour
     for (int i = 0; i < 3; i++)
     {
         AgreementRarity selectedRarity =
-            GetRandomRarity(player.Diplomat.Intelligence);
+            DiplomacyCalculator.GetRandomRarity(player.Diplomat.Intelligence);
 
         List<AgreementData> matchingAgreements =
             new List<AgreementData>();
@@ -56,68 +57,29 @@ public class DiplomacyManager : MonoBehaviour
         AgreementData selectedAgreement =
             matchingAgreements[randomIndex];
 
+        availableAgreements.Remove(selectedAgreement);
         playerAgreements.Add(selectedAgreement);
 
-        availableAgreements.Remove(selectedAgreement);
-        Debug.Log(
-            "Player " + player.PlayerID +
-            " | " + selectedRarity +
-            " | " + selectedAgreement.agreementName
+        int chance = DiplomacyCalculator.GetSuccessChance(
+        player,
+        enemy,
+        selectedAgreement);
+
+
+        int decisionTime = DiplomacyCalculator.GetDecisionTime(
+        player,
+        selectedAgreement);
+
+
+        Debug.Log(              //test için consolea yazdırma amaçlı
+        "Player " + player.PlayerID +
+        " | " + selectedRarity +
+        " | " + selectedAgreement.agreementName +
+        " | Success: " + chance + "%" +
+        " | Time: " + decisionTime + " sec"
         );
     }
 }
-
-    private AgreementRarity GetRandomRarity(int intelligence)
-    {
-        int roll = Random.Range(1, 101);
-
-        if (intelligence < 25)
-        {
-            if (roll <= 60) return AgreementRarity.Common;
-            if (roll <= 85) return AgreementRarity.Uncommon;
-            if (roll <= 95) return AgreementRarity.Rare;
-            if (roll <= 99) return AgreementRarity.Epic;
-
-            return AgreementRarity.Legendary;
-        }
-
-        if (intelligence < 50)
-        {
-            if (roll <= 45) return AgreementRarity.Common;
-            if (roll <= 75) return AgreementRarity.Uncommon;
-            if (roll <= 91) return AgreementRarity.Rare;
-            if (roll <= 98) return AgreementRarity.Epic;
-
-            return AgreementRarity.Legendary;
-        }
-
-        if (intelligence < 75)
-        {
-            if (roll <= 30) return AgreementRarity.Common;
-            if (roll <= 60) return AgreementRarity.Uncommon;
-            if (roll <= 83) return AgreementRarity.Rare;
-            if (roll <= 96) return AgreementRarity.Epic;
-
-            return AgreementRarity.Legendary;
-        }
-
-        if (intelligence < 100)
-        {
-            if (roll <= 18) return AgreementRarity.Common;
-            if (roll <= 43) return AgreementRarity.Uncommon;
-            if (roll <= 71) return AgreementRarity.Rare;
-            if (roll <= 92) return AgreementRarity.Epic;
-
-            return AgreementRarity.Legendary;
-        }
-
-        if (roll <= 10) return AgreementRarity.Common;
-        if (roll <= 28) return AgreementRarity.Uncommon;
-        if (roll <= 55) return AgreementRarity.Rare;
-        if (roll <= 85) return AgreementRarity.Epic;
-
-        return AgreementRarity.Legendary;
-    }
     private void ReadDiplomatStats()
 {
     Debug.Log("Player 1: " + player1.Diplomat.cardName);
