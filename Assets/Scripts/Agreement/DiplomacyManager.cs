@@ -8,6 +8,8 @@ public class DiplomacyManager : MonoBehaviour
     [SerializeField] private List<AgreementData> agreementList;
     [SerializeField] private Player player1;
     [SerializeField] private Player player2;
+    [SerializeField] private AgreementCardUI agreementCardPrefab;
+    [SerializeField] private Transform agreementContainer;
 
     private List<AgreementData> player1Agreements = new List<AgreementData>();
     private List<AgreementData> player2Agreements = new List<AgreementData>();
