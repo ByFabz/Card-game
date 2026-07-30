@@ -26,10 +26,10 @@ public class AgreementCardUI : MonoBehaviour
     rarityText.text = agreement.rarity.ToString();
 
     successChanceText.text =
-        "Success Chance: " + successChance.ToString("F0") + "%";
+        successChance.ToString("F0") + "%";
 
     decisionTimeText.text =
-        "Decision Time: " + decisionTime.ToString("F0") + " sec";
+        decisionTime.ToString("F0") + " seconds";
 }
 }
 

@@ -9,23 +9,35 @@ public class DiplomacyManager : MonoBehaviour
     [SerializeField] private Player player1;
     [SerializeField] private Player player2;
     [SerializeField] private AgreementCardUI agreementCardPrefab;
-    [SerializeField] private Transform agreementContainer;
+    [SerializeField] private Transform player1AgreementContainer;
+    [SerializeField] private Transform player2AgreementContainer;
 
     private List<AgreementData> player1Agreements = new List<AgreementData>();
     private List<AgreementData> player2Agreements = new List<AgreementData>();
 
     private void Start()
     {
-        GenerateAgreementsForPlayer(player1, player2, player1Agreements);
-        GenerateAgreementsForPlayer(player2, player1, player2Agreements);
-        ReadDiplomatStats();
+        GenerateAgreementsForPlayer(
+        player1,
+        player2,
+        player1Agreements,
+        player1AgreementContainer);
+
+        GenerateAgreementsForPlayer(
+        player2,
+        player1,
+        player2Agreements,
+        player2AgreementContainer);
+            
+        
     }
 
     private void GenerateAgreementsForPlayer(
     Player player,
     Player enemy,
-    List<AgreementData> playerAgreements)
-{
+    List<AgreementData> playerAgreements,
+    Transform agreementContainer)
+    {
     playerAgreements.Clear();
 
     List<AgreementData> availableAgreements =
@@ -72,6 +84,15 @@ public class DiplomacyManager : MonoBehaviour
         player,
         selectedAgreement);
 
+        AgreementCardUI card =
+        Instantiate(
+        agreementCardPrefab,
+        agreementContainer);
+
+        card.Initialize(
+        selectedAgreement,
+        chance,
+        decisionTime);
 
         Debug.Log(              //test için consolea yazdırma amaçlı
         "Player " + player.PlayerID +
@@ -81,12 +102,7 @@ public class DiplomacyManager : MonoBehaviour
         " | Time: " + decisionTime + " sec"
         );
     }
-}
-    private void ReadDiplomatStats()
-{
-    Debug.Log("Player 1: " + player1.Diplomat.cardName);
-    Debug.Log("Player 2: " + player2.Diplomat.cardName);
-}
+    }
 }
 
     
