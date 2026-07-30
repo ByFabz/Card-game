@@ -10,15 +10,22 @@ public class AgreementCardUI : MonoBehaviour
     [SerializeField] private TMP_Text rarityText;
     [SerializeField] private TMP_Text successChanceText;
     [SerializeField] private TMP_Text decisionTimeText;
+    private AgreementData agreementData;
+    private DiplomacyManager diplomacyManager;
 
     [Header("Button")]
     [SerializeField] private Button selectButton;
 
     public void Initialize(
     AgreementData agreement,
-    float successChance,
-    float decisionTime)
+    float chance,
+    float time,
+    DiplomacyManager manager)
 {
+    agreementData = agreement;
+    diplomacyManager = manager;
+
+
     agreementNameText.text = agreement.agreementName;
 
     descriptionText.text = agreement.description;
@@ -26,10 +33,20 @@ public class AgreementCardUI : MonoBehaviour
     rarityText.text = agreement.rarity.ToString();
 
     successChanceText.text =
-        successChance.ToString("F0") + "%";
+        chance.ToString("F0") + "%";
 
     decisionTimeText.text =
-        decisionTime.ToString("F0") + " seconds";
+        time.ToString("F0") + " seconds";
+}
+
+private void Awake()
+{
+    selectButton.onClick.AddListener(OnSelectButtonPressed);
+}
+
+private void OnSelectButtonPressed()
+{
+    diplomacyManager.SelectAgreement(agreementData);
 }
 }
 

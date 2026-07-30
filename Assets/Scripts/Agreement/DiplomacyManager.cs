@@ -11,6 +11,7 @@ public class DiplomacyManager : MonoBehaviour
     [SerializeField] private AgreementCardUI agreementCardPrefab;
     [SerializeField] private Transform player1AgreementContainer;
     [SerializeField] private Transform player2AgreementContainer;
+    private AgreementData selectedAgreement;
 
     private List<AgreementData> player1Agreements = new List<AgreementData>();
     private List<AgreementData> player2Agreements = new List<AgreementData>();
@@ -68,21 +69,21 @@ public class DiplomacyManager : MonoBehaviour
         int randomIndex =
             Random.Range(0, matchingAgreements.Count);
 
-        AgreementData selectedAgreement =
+        AgreementData generatedAgreement =
             matchingAgreements[randomIndex];
 
-        availableAgreements.Remove(selectedAgreement);
-        playerAgreements.Add(selectedAgreement);
+        availableAgreements.Remove(generatedAgreement);
+        playerAgreements.Add(generatedAgreement);
 
         int chance = DiplomacyCalculator.GetSuccessChance(
         player,
         enemy,
-        selectedAgreement);
+        generatedAgreement);
 
 
         int decisionTime = DiplomacyCalculator.GetDecisionTime(
         player,
-        selectedAgreement);
+        generatedAgreement);
 
         AgreementCardUI card =
         Instantiate(
@@ -90,18 +91,25 @@ public class DiplomacyManager : MonoBehaviour
         agreementContainer);
 
         card.Initialize(
-        selectedAgreement,
+        generatedAgreement,
         chance,
-        decisionTime);
+        decisionTime,
+        this);
 
         Debug.Log(              //test için consolea yazdırma amaçlı
         "Player " + player.PlayerID +
         " | " + selectedRarity +
-        " | " + selectedAgreement.agreementName +
+        " | " + generatedAgreement.agreementName +
         " | Success: " + chance + "%" +
         " | Time: " + decisionTime + " sec"
         );
     }
+    }
+    public void SelectAgreement(AgreementData agreement)
+    {
+    selectedAgreement = agreement;
+
+    Debug.Log("Selected Agreement: " + agreement.agreementName);
     }
 }
 
