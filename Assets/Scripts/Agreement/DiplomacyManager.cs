@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 
@@ -11,10 +13,12 @@ public class DiplomacyManager : MonoBehaviour
     [SerializeField] private AgreementCardUI agreementCardPrefab;
     [SerializeField] private Transform player1AgreementContainer;
     [SerializeField] private Transform player2AgreementContainer;
+    [SerializeField] private TMP_Text negotiationTimerText;
     private AgreementData selectedAgreement;
-
+    private List<AgreementCardUI> activeCards = new List<AgreementCardUI>();
     private List<AgreementData> player1Agreements = new List<AgreementData>();
     private List<AgreementData> player2Agreements = new List<AgreementData>();
+    private float remainingTime;
 
     private void Start()
     {
@@ -30,7 +34,6 @@ public class DiplomacyManager : MonoBehaviour
         player2Agreements,
         player2AgreementContainer);
             
-        
     }
 
     private void GenerateAgreementsForPlayer(
@@ -96,6 +99,8 @@ public class DiplomacyManager : MonoBehaviour
         decisionTime,
         this);
 
+        activeCards.Add(card);
+
         Debug.Log(              //test için consolea yazdırma amaçlı
         "Player " + player.PlayerID +
         " | " + selectedRarity +
@@ -105,11 +110,38 @@ public class DiplomacyManager : MonoBehaviour
         );
     }
     }
-    public void SelectAgreement(AgreementData agreement)
+    public void SelectAgreement(AgreementCardUI selectedCard)
     {
-    selectedAgreement = agreement;
+    selectedAgreement = selectedCard.AgreementData;
 
-    Debug.Log("Selected Agreement: " + agreement.agreementName);
+    remainingTime = selectedCard.DecisionTime;
+
+    Debug.Log(remainingTime);
+    Debug.Log("Selected Agreement: " + selectedAgreement.agreementName);
+
+    foreach (AgreementCardUI card in activeCards)
+    {
+        if (card != selectedCard)
+        {
+            Destroy(card.gameObject);
+        }
+    }
+
+    StartCoroutine(NegotiationTimer());
+    
+    }
+
+    private IEnumerator NegotiationTimer()
+    {
+    while(remainingTime > 0)
+        {
+        negotiationTimerText.text =
+        remainingTime.ToString("F0") + " seconds";
+
+        remainingTime -= Time.deltaTime;
+
+        yield return null;
+        }
     }
 }
 

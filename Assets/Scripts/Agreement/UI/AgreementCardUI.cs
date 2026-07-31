@@ -11,7 +11,14 @@ public class AgreementCardUI : MonoBehaviour
     [SerializeField] private TMP_Text successChanceText;
     [SerializeField] private TMP_Text decisionTimeText;
     private AgreementData agreementData;
+    public AgreementData AgreementData => agreementData;
     private DiplomacyManager diplomacyManager;
+    private float successChance;
+    private float decisionTime;
+    public float SuccessChance => successChance;
+    public float DecisionTime => decisionTime;
+
+
 
     [Header("Button")]
     [SerializeField] private Button selectButton;
@@ -24,7 +31,8 @@ public class AgreementCardUI : MonoBehaviour
 {
     agreementData = agreement;
     diplomacyManager = manager;
-
+    successChance = chance;
+    decisionTime = time;
 
     agreementNameText.text = agreement.agreementName;
 
@@ -46,7 +54,7 @@ private void Awake()
 
 private void OnSelectButtonPressed()
 {
-    diplomacyManager.SelectAgreement(agreementData);
+    diplomacyManager.SelectAgreement(this);
 }
 }
 
