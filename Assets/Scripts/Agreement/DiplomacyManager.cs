@@ -14,12 +14,15 @@ public class DiplomacyManager : MonoBehaviour
     [SerializeField] private Transform player1AgreementContainer;
     [SerializeField] private Transform player2AgreementContainer;
     [SerializeField] private TMP_Text negotiationTimerText;
-    private AgreementData selectedAgreement;
+    [SerializeField] private TMP_Text cooldownTimerText;
+    [SerializeField] private TMP_Text successOrFailText;
+    [SerializeField] private GameObject rollAgainButton;
     private List<AgreementCardUI> activeCards = new List<AgreementCardUI>();
     private List<AgreementData> player1Agreements = new List<AgreementData>();
     private List<AgreementData> player2Agreements = new List<AgreementData>();
+    private AgreementData selectedAgreement;
     private float remainingTime;
-
+    private float selectedSuccessChance;
     private void Start()
     {
         GenerateAgreementsForPlayer(
@@ -115,9 +118,7 @@ public class DiplomacyManager : MonoBehaviour
     selectedAgreement = selectedCard.AgreementData;
 
     remainingTime = selectedCard.DecisionTime;
-
-    Debug.Log(remainingTime);
-    Debug.Log("Selected Agreement: " + selectedAgreement.agreementName);
+    selectedSuccessChance = selectedCard.SuccessChance;
 
     foreach (AgreementCardUI card in activeCards)
     {
@@ -133,15 +134,57 @@ public class DiplomacyManager : MonoBehaviour
 
     private IEnumerator NegotiationTimer()
     {
-    while(remainingTime > 0)
+
+    negotiationTimerText.gameObject.SetActive(true);
+
+    while(remainingTime >= -1)
         {
-        negotiationTimerText.text =
-        remainingTime.ToString("F0") + " seconds";
+        negotiationTimerText.text = "The agreement will be announced in " + 
+        Mathf.CeilToInt(remainingTime).ToString() + " seconds";
 
         remainingTime -= Time.deltaTime;
 
         yield return null;
         }
+    
+    negotiationTimerText.gameObject.SetActive(false);
+
+    if (Random.Range(0f, 100f) <= selectedSuccessChance)
+
+    {
+    successOrFailText.gameObject.SetActive(true);
+    successOrFailText.text = "The agreement was a SUCCESS";
+    StartCoroutine(CooldownTimer());
+    }
+
+    else
+
+    {
+    successOrFailText.gameObject.SetActive(true);    
+    successOrFailText.text = "The agreement was a FAILURE";
+    rollAgainButton.SetActive(true);
+    }
+    }
+
+    private IEnumerator CooldownTimer()
+    {
+    float cooldown = 60f;
+
+    cooldownTimerText.gameObject.SetActive(true);
+    
+        while (cooldown >= -1)
+        {
+            cooldownTimerText.text =
+                "New agreements available in " +
+                Mathf.CeilToInt(cooldown) + " seconds";
+
+            cooldown -= Time.deltaTime;
+
+            yield return null;
+        }
+
+    cooldownTimerText.gameObject.SetActive(false);
+    rollAgainButton.SetActive(true);
     }
 }
 
