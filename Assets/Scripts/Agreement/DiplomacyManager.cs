@@ -186,6 +186,34 @@ public class DiplomacyManager : MonoBehaviour
     cooldownTimerText.gameObject.SetActive(false);
     rollAgainButton.SetActive(true);
     }
+
+    public void RollAgain()
+    {
+    successOrFailText.gameObject.SetActive(false);
+
+    rollAgainButton.SetActive(false);
+
+    foreach (AgreementCardUI card in activeCards)
+    
+    if (card != null)
+    {
+        Destroy(card.gameObject);
+    }
+
+    activeCards.Clear();
+
+    GenerateAgreementsForPlayer(
+        player1,
+        player2,
+        player1Agreements,
+        player1AgreementContainer);
+
+    GenerateAgreementsForPlayer(
+        player2,
+        player1,
+        player2Agreements,
+        player2AgreementContainer);
+    }
 }
 
     

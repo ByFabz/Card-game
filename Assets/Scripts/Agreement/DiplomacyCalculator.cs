@@ -69,7 +69,7 @@ public static int GetSuccessChance(
 
         chance += difference / 2;
 
-        chance = Mathf.Clamp(chance, 10, 95);
+        chance = Mathf.Clamp(chance, 10, 90);
 
         return chance;
     }
